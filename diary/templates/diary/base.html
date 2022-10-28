@@ -12,24 +12,26 @@
 </head>
 <body>
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>
-                    {{ message.tags }}
-                    {{ message }}
-                </li>
-            {% endfor %}
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <span class="fs-4">Django diary</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="/diary/" class="nav-link">Diary</a></li>
         </ul>
-    {% endif %}
+    </header>
+</div>
 
-    <h1>다이어리</h1>
-
+<div class="container">
+    {% bootstrap_messages %}
     {% block content %}{% endblock %}
-
     <hr/>
     &copy; 2022. Chinseok Lee Company.
+</div>
 
-    {% bootstrap_javascript %}
+{% bootstrap_javascript %}
 </body>
 </html>

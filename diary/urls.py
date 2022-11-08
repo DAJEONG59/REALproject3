@@ -8,4 +8,13 @@ urlpatterns = [
     path("<int:pk>/edit/", views.memory_edit),
     path("<int:pk>/delete/", views.memory_delete),
     path("gallery/", views.gallery),
+
+
+    path("keyword/new/", views.keyword_new),
+    path("keyword/<int:pk>/", views.k_detail_page),
+    path("keyword/<int:pk>/edit/", views.key_edit),
+    path("keyword/<int:pk>/delete/", views.key_delete),
+
+
+
 ]

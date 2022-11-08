@@ -18,6 +18,7 @@ from django.urls import path, include
 
 from django.http import HttpResponse
 
+
 def root(request):
     return HttpResponse("hello django")
 

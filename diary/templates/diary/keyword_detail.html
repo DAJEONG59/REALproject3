@@ -1,0 +1,18 @@
+{% extends "diary/base.html" %}
+
+{% block content %}
+    <h2>{{ kmemory.create_dat }}</h2>
+
+    {{ kmemory.weather }}
+    {{ kmemory.drawing }}
+
+    {{ kmemory.content1 }}
+    {{ kmemory.content2 }}
+    {{ kmemory.content3 }}
+
+
+    <hr>
+    <a href="/diary/keyword/{{ kmemory.pk }}/edit/">수정</a>
+    <a href="/diary/keyword/{{ kmemory.pk }}/delete/">삭제</a>
+    <a href="/diary/">일기 목록으로 가기</a>
+{% endblock %}

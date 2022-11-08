@@ -1,13 +1,22 @@
 {% extends "diary/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" />
+    </form>
+{% endblock %}
 
 
+<!--    <h4>{{ kmemory.created_at }}</h4>-->
 
-    <h1>{{ kmemory.title }}</h1>
-    <h4>{{ kmemory.created_at }}</h4>
+<!--    <p>{{ kmemory.weather }}</p>-->
+<!--    <p>{{ kmemory.content1 }}</p>-->
 
-    <p>{{ kmemory.content1 }}</p>
-    <p>{{ kmemory.content2 }}</p>
-    <p>{{ kmemory.content3 }}</p>
-
+<!--    <p>{{ kmemory.content1 }}</p>-->
+<!--    <p>{{ kmemory.content2 }}</p>-->
+<!--    <p>{{ kmemory.content3 }}</p>-->
 
 

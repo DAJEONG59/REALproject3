@@ -27,5 +27,4 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('diary/', include('diary.urls')),
     path('admin/', admin.site.urls),
-    path('__debug__/', include('debug_toolbar.urls')),
 ]

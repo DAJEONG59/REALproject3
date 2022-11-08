@@ -70,6 +70,8 @@ def memory_delete(request, pk):
         "memory": memory,
     })
 
+def gallery(request):
+    return render(request, "diary/gallery.html")
 
 
 

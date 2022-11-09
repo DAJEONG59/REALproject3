@@ -38,7 +38,6 @@ class KeywordPost(models.Model):
     content2 = models.TextField(max_length=7)
     content3 = models.TextField(max_length=7)
 
-
     create_dat = models.DateTimeField(auto_now_add=True)
     update_dat= models.DateTimeField(auto_now=True)
 

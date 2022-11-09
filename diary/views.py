@@ -25,7 +25,7 @@ def memory_new(request):
         if form.is_valid():
             # form.cleaned_data
             memory = form.save()
-            messages.success(request, "메모리를 생성했습니다.")
+            messages.success(request, "일기를 생성했습니다.")
             # return redirect(f"/diary/{memory.pk}/")
             # return redirect(memory.get_absolute_url())
             return redirect(memory)
@@ -93,11 +93,11 @@ def keyword_new(request):
         form = KeywordForm(request.POST)
         if form.is_valid():
             # form.cleaned_data
-            kmemory = form.save()
+            memory = form.save()
             messages.success(request, "일기를 생성했습니다.")
             # return redirect(f"/diary/{memory.pk}/")
             # return redirect(memory.get_absolute_url())
-            return redirect(kmemory)
+            return redirect(memory)
     else:
         form = KeywordForm()
 
@@ -138,3 +138,4 @@ def key_delete(request, pk):
     return render(request, "diary/memory_confirm_delete.html", {
         "memory": memory,
     })
+

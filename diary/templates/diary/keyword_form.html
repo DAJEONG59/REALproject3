@@ -1,12 +1,73 @@
 {% extends "diary/base.html" %}
 {% load django_bootstrap5 %}
 
+
+
+
 {% block content %}
     <form action="" method="post" novalidate>
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" class="btn btn-primary" />
-    </form>
+<!--        <input type="submit" class="btn btn-primary" />-->
+
+<a class="btn btn-primary btn-lg" href="#" role="button">자동 생성</a>
+    <button
+      type="button"
+      class="btn btn-primary btn-lg"
+      data-bs-toggle="modal"
+      data-bs-target="#goModal"
+      data-bs-whatever=""
+    >
+      직접 생성
+    </button>
+
+    <div
+      class="modal fade"
+      id="goModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      style="display: none"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+             직접 생성
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">원하는 그림을 한 문장으로 작성해주세요. </label>
+                <textarea
+                  class="form-control"
+                  id="message-text"
+                  style="height: 80px"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+              <a class="btn btn-primary" href="#" role="button">그림 생성</a>
+<!--            <button type="button" class="btn btn-primary" href="/diary/">그림 생성</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
 {% endblock %}
 
 

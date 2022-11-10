@@ -8,9 +8,48 @@
     <form action="" method="post" novalidate>
         {% csrf_token %}
         {% bootstrap_form form %}
-<!--        <input type="submit" class="btn btn-primary" />-->
 
-<a class="btn btn-primary btn-lg" href="#" role="button">자동 생성</a>
+<div class="mb-3">
+                            <label class="form-label">Icon input</label>
+                            <div class="form-selectgroup">
+                              <label class="form-selectgroup-item">
+                                <input type="checkbox" name="name" value="sun" class="form-selectgroup-input" checked="">
+                                <span class="form-selectgroup-label"><!-- Download SVG icon from http://tabler-icons.io/i/sun -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="4"></circle><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path></svg>
+                                </span>
+                              </label>
+                              <label class="form-selectgroup-item">
+                                <input type="checkbox" name="name" value="moon" class="form-selectgroup-input">
+                                <span class="form-selectgroup-label"><!-- Download SVG icon from http://tabler-icons.io/i/moon -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path></svg>
+                                </span>
+                              </label>
+                              <label class="form-selectgroup-item">
+                                <input type="checkbox" name="name" value="cloud-rain" class="form-selectgroup-input">
+                                <span class="form-selectgroup-label"><!-- Download SVG icon from http://tabler-icons.io/i/cloud-rain -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7"></path><path d="M11 13v2m0 3v2m4 -5v2m0 3v2"></path></svg>
+                                </span>
+                              </label>
+                              <label class="form-selectgroup-item">
+                                <input type="checkbox" name="name" value="cloud" class="form-selectgroup-input">
+                                <span class="form-selectgroup-label"><!-- Download SVG icon from http://tabler-icons.io/i/cloud -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M6.657 18c-2.572 0 -4.657 -2.007 -4.657 -4.483c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 .996c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 1.927 -1.551 3.487 -3.465 3.487h-11.878"></path></svg>
+                                </span>
+                              </label>
+                              <label class="form-selectgroup-item">
+                                <input type="checkbox" name="name" value="Other" class="form-selectgroup-input">
+                                <span class="form-selectgroup-label">Other</span>
+                              </label>
+                            </div>
+                          </div>
+
+
+
+<input type="submit" class="btn btn-primary btn-lg" value="자동 생성" />
+
+
+
+<!--자동 생성-->
     <button
       type="button"
       class="btn btn-primary btn-lg"
@@ -46,11 +85,12 @@
             <form>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">원하는 그림을 한 문장으로 작성해주세요. </label>
-                <textarea
-                  class="form-control"
-                  id="message-text"
-                  style="height: 80px"
-                ></textarea>
+
+                  <div class="form-floating">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                  <label for="floatingTextarea2">20자 이내</label>
+                  </div>
+
               </div>
             </form>
           </div>
@@ -62,7 +102,8 @@
             >
               닫기
             </button>
-              <a class="btn btn-primary" href="#" role="button">그림 생성</a>
+              <input type="submit" class="btn btn-primary" value="그림 생성" />
+
 <!--            <button type="button" class="btn btn-primary" href="/diary/">그림 생성</button>-->
           </div>
         </div>

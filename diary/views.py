@@ -86,6 +86,8 @@ def k_detail_page(request, pk):
         "keyword_post": keyword_memory,
     })
 
+
+
 # 키워드로 일기쓰기 (생성)
 
 def keyword_new(request):

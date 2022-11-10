@@ -21,16 +21,22 @@ class Memory(models.Model):
 
 class KeywordPost(models.Model):
 
-    weather_choices = {('S','맑아요'),
-                       ('C','흐려요'),
-                       ('R','비가 와요'),
-                       ('Sn','눈이 와요')}
-    drawing_choices = {('Ct','만화'),
-                       ('Od','유화'),
-                       ('Sc','스케치')}
 
-    Weather = models.CharField(max_length=10, choices=weather_choices, null=True)
-    Drawing = models.CharField(max_length=10, choices=drawing_choices, null=True)
+    weather_choices = {('Sunny','맑아요'),
+                       ('Cloudy','흐려요'),
+                       ('Rainy','비가 와요'),
+                       ('Snowy','눈이 와요')}
+
+    drawing_choices = {('Digital Art','디지털 아트'),
+                       ('Oil and Canvas','유화'),
+                       ('Sketched','스케치'),
+                       ('Impressionism', '인상주의'),
+                       # ('','')
+                       }
+
+
+    Weather = models.CharField(max_length=20, choices=weather_choices,null=True)
+    Drawing = models.CharField(max_length=20, choices=drawing_choices,null=True )
 
     # title = models.CharField(max_length=30)
 

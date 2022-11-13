@@ -104,7 +104,7 @@ def keyword_new(request):
         form = KeywordForm()
 
     return render(request, "diary/keyword_form.html", {
-        "form": form,
+        "key_form": form,
     })
 
 
@@ -123,9 +123,10 @@ def key_edit(request, pk):
     else:
         form = MemoryForm(instance=memory)
 
-    return render(request, "diary/memory_form.html", {
-        "form": form,
+    return render(request, "diary/keyword_form.html", {
+        "key_form": form,
     })
+
 
 
 def key_delete(request, pk):
@@ -134,10 +135,9 @@ def key_delete(request, pk):
     # delete memory
     if request.method == "POST":
         memory.delete()
-        messages.success(request, "일기를 삭제했습니다.")
+        messages.success(request, "메모리를 삭제했습니다.")
         return redirect("/diary/")
 
     return render(request, "diary/memory_confirm_delete.html", {
         "memory": memory,
     })
-

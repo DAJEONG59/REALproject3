@@ -7,10 +7,40 @@
 {% block content %}
     <form action="" method="post" novalidate>
         {% csrf_token %}
-        {% bootstrap_form form %}
+<style>
+		textarea {
+			width: 100%;
+			height: 200px;
+			padding: 50px;
+			box-sizing: border-box;
+			border: solid 2px #1E90FF;
+			border-radius: 50px;
+			font-size: 16px;
+			resize: both;
+		}
 
 
-<!--      날씨 선택 라디오 버튼 그룹-->
+	</style>
+
+
+
+
+
+
+        <div class="container text-center">
+
+            <h1 > 짧은 단어로 일기 쓰기</h1>
+             <small class="text-muted">오늘 하루를 단어 세 개로 표현해보세요!</small>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+     <div class="row">
+    <div class="col">
+      <!--      날씨 선택 라디오 버튼 그룹-->
 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
       <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="" value="Sunny">
       <label class="btn btn-outline-primary" for="btnradio1"> <span class="form-selectgroup-label"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
@@ -62,12 +92,12 @@
 
     </div>
 
- <br>
-        <br>
 
 
 
-<!--        감정 라디오 버튼-->
+    </div>
+    <div class="col">
+     <!--        감정 라디오 버튼-->
 
 
  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -126,23 +156,47 @@
         <path d="M14.5 16.05a3.5 3.5 0 0 0 -5 0"></path>
      </svg></label>
 
-
-
-
     </div>
 
+    </div>
+  </div>
+
+<br>
+
+
+  <div class="row">
+    <div class="col">
+      <h2> 단어 1 </h2>
+{{ key_form.content1 }}
+
+    </div>
+    <div class="col">
+      <h2> 단어 2 </h2>
+        {{ key_form.content2 }}
+    </div>
+    <div class="col">
+      <h2> 단어 3 </h2>
+        {{ key_form.content3 }}
+    </div>
+  </div>
+</div>
 
 
 
-        <br>
-        <br>
+
+
+<br>
+<br>
+
+
+
+
 
 
 <input type="submit" class="btn btn-primary btn-lg" value="자동 생성" />
 
 
-
-<!--자동 생성-->
+<!--직접 생성-->
     <button
       type="button"
       class="btn btn-primary btn-lg"
@@ -181,7 +235,7 @@
 
                   <div class="form-floating">
                   <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                  <label for="floatingTextarea2">20자 이내</label>
+                  <label for="floatingTextarea2">40자 이내</label>
                   </div>
 
               </div>
@@ -205,14 +259,5 @@
     </form>
 {% endblock %}
 
-
-<!--    <h4>{{ kmemory.created_at }}</h4>-->
-
-<!--    <p>{{ kmemory.weather }}</p>-->
-<!--    <p>{{ kmemory.content1 }}</p>-->
-
-<!--    <p>{{ kmemory.content1 }}</p>-->
-<!--    <p>{{ kmemory.content2 }}</p>-->
-<!--    <p>{{ kmemory.content3 }}</p>-->
 
 
